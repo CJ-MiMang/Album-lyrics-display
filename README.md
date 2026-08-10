@@ -1,4 +1,4 @@
-# NetMusic Create Bridge (NMCB)
+# Album lyrics display
 
 独立桥接模组：让 Create 的 **Display Link（显示链接器）** 能读取 NetMusic **Music Player（唱片机）** 的歌词，在 **翻牌显示器 (Flap Display / Display Board)** 上同步显示。
 
