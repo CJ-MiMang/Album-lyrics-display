@@ -1,0 +1,26 @@
+# Gradle
+.gradle/
+build/
+
+# IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Runtime
+run/
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Forge
+src/generated/
+
+# JAR dependencies
+libs/*.jar
+!libs/README.txt
