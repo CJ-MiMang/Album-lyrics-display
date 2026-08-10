@@ -40,74 +40,6 @@
 
 ---
 
-## 文件结构
-
-```
-new mod/
-├── build.gradle                          # Gradle 构建配置
-├── gradle.properties                     # 版本属性
-├── settings.gradle                       # Gradle 设置
-├── libs/                                 # 依赖 JAR 存放目录
-│   └── README.txt                        # 说明文件
-├── README.md                             # 本文件
-└── src/main/
-    ├── java/com/example/nmcb/
-    │   ├── NetMusicCreateBridge.java     # 主模组类（注册网络包）
-    │   ├── NetMusicClientEvents.java     # 客户端事件（反射读取歌词）
-    │   ├── LyricToServerMessage.java     # 网络包（客户端→服务端）
-    │   ├── NetMusicBridgeEvents.java     # 服务端事件（注册 DisplaySource）
-    │   └── NetMusicLyricDisplaySource.java # DisplaySource 实现（读取歌词并显示）
-    └── resources/
-        ├── META-INF/
-        │   ├── neoforge.mods.toml        # 模组元数据
-        │   └── accesstransformer.cfg     # AT 配置
-        ├── assets/nmcb/lang/
-        │   ├── en_us.json                # 英文语言文件
-        │   └── zh_cn.json                # 中文语言文件
-        └── pack.mcmeta                   # 资源包配置
-```
-
----
-
-## 编译步骤
-
-### 1. 准备依赖 JAR
-
-先分别编译 Create 和 NetMusic 模组，获取它们的 JAR 文件：
-
-```bash
-# 编译 Create
-cd Create-mc1.21.1-6.0.10
-./gradlew build
-# JAR 位于 build/libs/ 目录
-
-# 编译 NetMusic
-cd NetMusic
-./gradlew build
-# JAR 位于 build/libs/ 目录
-```
-
-将编译好的 JAR 文件复制到 `new mod/libs/` 目录：
-- `create-6.0.10.jar`（或对应的版本号）
-- `netmusic.jar`（或对应的版本号）
-
-然后修改 `build.gradle` 中的文件名以匹配实际的 JAR 文件名。
-
-### 2. 编译本模组
-
-```bash
-cd "new mod"
-./gradlew build
-```
-
-编译产物位于 `build/libs/nmcb-1.0.0.jar`。
-
-### 3. 安装
-
-将 `nmcb-1.0.0.jar` 放入 Minecraft 的 `mods/` 文件夹（与 Create 和 NetMusic 的 JAR 一起）。
-
----
-
 ## 使用方法
 
 1. 放置一个 **NetMusic 唱片机**，放入一张有歌词的网易云音乐 CD
@@ -120,7 +52,7 @@ cd "new mod"
 
 ### 注意事项
 
-- 歌词每 5 秒更新一次（Display Link 的默认刷新间隔）
+- 歌词每 10 tick更新一次
 - 仅支持网易云音乐来源的 CD（URL 包含 `music.163.com`）
 - 需要在 NetMusic 配置中启用歌词功能 (`ENABLE_PLAYER_LYRICS`)
 - 翻牌显示器需要足够的转速才能正常工作
@@ -131,6 +63,6 @@ cd "new mod"
 
 | 模组 | 版本 | 说明 |
 |------|------|------|
-| NeoForge | 21.1.x | Minecraft 1.21.1 模组加载器 |
+| Forge | 47.4.x | Minecraft 1.20.1 模组加载器 |
 | Create | 6.0.x | 机械动力模组 |
 | NetMusic | 1.x | 网易云音乐唱片机模组 |
