@@ -18,7 +18,7 @@ import org.slf4j.Logger;
  */
 @Mod(NetMusicCreateBridge.MOD_ID)
 public class NetMusicCreateBridge {
-    public static final String MOD_ID = "nmcb";
+    public static final String MOD_ID = "ald";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     private static final String NETWORK_VERSION = "1.0.0";

@@ -1,5 +1,5 @@
 {
-  "nmcb.display_source.netmusic_lyric": "唱片歌词",
+  "ald.display_source.netmusic_lyric": "唱片歌词",
   "create.display_source.nmcb.netmusic_lyric.original": "原文",
   "create.display_source.nmcb.netmusic_lyric.translated": "翻译 (歌词里没有翻译的词会显示空白)",
   "create.display_source.nmcb.netmusic_lyric.bilingual": "双语"
